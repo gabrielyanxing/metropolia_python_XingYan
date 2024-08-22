@@ -34,9 +34,9 @@ print("The product is " + str(the_product) + ".")
 print("The average is " + str(the_average) + ".")
 
 # 2.5
-talents = int(input("Enter talents: "))
-pounds = int(input("Enter pounds: "))
-lots = int(input("Enter lots: "))
+talents = float(input("Enter talents: "))
+pounds = float(input("Enter pounds: "))
+lots = float(input("Enter lots: "))
 grams = talents*20*32*13.3+pounds*32*13.3+lots*13.3
 kilograms = grams//1000
 remainder = grams%1000
@@ -48,11 +48,21 @@ num1 = random.randint(0,9)
 num2 = random.randint(0,9)
 num3 = random.randint(0,9)
 print(num1,num2,num3)
-
-num4 = random.randint(1,6)
-num5 = random.randint(1,6)
-num6 = random.randint(1,6)
+num4 = random.randint(0,9)
+num5 = random.randint(0,9)
+num6 = random.randint(0,9)
 print(num4,num5,num6)
+
+num7 = random.randint(1,6)
+num8 = random.randint(1,6)
+num9 = random.randint(1,6)
+num10 = random.randint(1,6)
+print(num7,num8,num9,num10)
+num11 = random.randint(1,6)
+num12 = random.randint(1,6)
+num13 = random.randint(1,6)
+num14 = random.randint(1,6)
+print(num11,num12,num13,num14,num11)
 
 # 3.Conditional structures(if)
 # 3.1
