@@ -2,7 +2,6 @@ import math
 import random
 
 # 1.First program and deployment of version control
-
 print("Hello, Viivi Virta!")
 
 # 2.Variables and interactive programs
@@ -57,3 +56,48 @@ print(num4,num5,num6)
 
 # 3.Conditional structures(if)
 # 3.1
+length = float(input("Enter the length of a zander in centimeters:"))
+if length < 42:
+    print("%.1f centimeters below the size limit the caught fish was.And release the fish back into the lake." % (42-length))
+else:
+    print("the zander does fulfill the size limit")
+
+# 3.2
+cabin_class = input("Enter the cabin calss of a curise ship(LUX,A,B,C):")
+if cabin_class == "LUX":
+    print("LUX:upper-deck cabin with a balcony.")
+elif cabin_class == "A":
+    print("A:above the car deck,equipped with a window.")
+elif cabin_class == "B":
+    print("B:windowless cabin above the car deck.")
+elif cabin_class == "C":
+    print("C:windowless cabin below the car deck.")
+else:
+    print("Invalid cabin class.")
+
+# 3.3
+biological_gender = input("Enter your biological_gender:")
+hemoglobin_value = float(input("Enter your hemoglobin value (g/l):"))
+if biological_gender == "female":
+    if hemoglobin_value >= 117 and hemoglobin_value <= 155:
+        print("Yuor hemoglobin value is normal!")
+    else:
+        print("Yuor hemoglobin value is not normal!")
+elif biological_gender == "male":
+    if hemoglobin_value >= 134 and hemoglobin_value <= 167:
+        print("Yuor hemoglobin value is normal!")
+    else:
+        print("Yuor hemoglobin value is not normal!")
+
+# 3.4
+year = int(input("Enter a year:"))
+if (year % 4) == 0:
+    if (year % 100) != 0:
+        if (year % 400) == 0:
+            print("It's a leap year.")
+        else:
+            print("It's not a leap year.")
+    else:
+        print("It's a leap year.")
+else:
+    print("It's not a leap year.")
