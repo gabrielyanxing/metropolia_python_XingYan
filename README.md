@@ -87,7 +87,7 @@ length = float(input("Enter the length of a zander in centimeters:"))
 if length < 42:  
     print("%.1f centimeters below the size limit the caught fish was.And release the fish back into the lake." % (42-length))  
 else:  
-    print("the zander does fulfill the size limit.")
+    print("The zander does fulfill the size limit.")
 ```
 ### 3.2
 ```python
