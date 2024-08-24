@@ -6,21 +6,21 @@ print("Hello, Viivi Virta!")
 
 # 2.Variables and interactive programs
 # 2.1
-name = input("What is your name?: ")
-print("Hello, " + name + ".")
+name = input("What is your name?\n")
+print(f"Hello, {name}.")
 
 # 2.2
 radius = float(input("Enter a radius: "))
 the_area_of_circle = math.pi * radius**2
-print("The area is " + str(the_area_of_circle) + ".")
+print(f"The area is %.2f." % the_area_of_circle)
 
 # 2.3
 length = float(input("Enter a length: "))
 width = float(input("Enter a width: "))
 the_perimeter_of_rectangle = (length + width) * 2
 the_area_of_rectangle = length * width
-print("The perimeter is " + str(the_perimeter_of_rectangle) + ".")
-print("The area is " + str(the_area_of_rectangle) + ".")
+print("The perimeter is %.2f." % the_perimeter_of_rectangle)
+print("The area is %.2f." % the_area_of_rectangle)
 
 # 2.4
 first_integer_number = int(input("Enter a integer: "))
@@ -29,9 +29,9 @@ third_integer_number = int(input("Enter a integer: "))
 the_sum = first_integer_number + second_integer_number + third_integer_number
 the_product = first_integer_number * second_integer_number * third_integer_number
 the_average = the_sum / 3
-print("The sum is " + str(the_sum) + ".")
-print("The product is " + str(the_product) + ".")
-print("The average is " + str(the_average) + ".")
+print(f"The sum is {the_sum}.")
+print(f"The product is {the_product}.")
+print("The average is %.2f." % the_average)
 
 # 2.5
 talents = float(input("Enter talents: "))
@@ -73,7 +73,7 @@ else:
     print("the zander does fulfill the size limit")
 
 # 3.2
-cabin_class = input("Enter the cabin calss of a curise ship(LUX,A,B,C):")
+cabin_class = input("Enter the cabin class of a cruise ship(LUX,A,B,C):")
 if cabin_class == "LUX":
     print("LUX:upper-deck cabin with a balcony.")
 elif cabin_class == "A":
