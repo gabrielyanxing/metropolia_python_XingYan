@@ -1,22 +1,21 @@
-# Metropolia-Python
-## Python-Exercises
-### 1. First program and deployment of version control
-#### 1.1
+# Metropolia-Python-Exercises
+## 1. First program and deployment of version control
+### 1.1
 	print("Hello, Viivi Virta!")
-### 2. Variables and interactive programs
-#### 2.1
+## 2. Variables and interactive programs
+### 2.1
 ```
 name = input("What is your name?\n")  
 print(f"Hello, {name}.")
 ```
-#### 2.2
+### 2.2
 ```
 import math
 radius = float(input("Enter a radius: "))  
 the_area_of_circle = math.pi * radius**2  
 print(f"The area is %.2f." % the_area_of_circle)
 ```
-#### 2.3
+### 2.3
 ```
 length = float(input("Enter a length: "))  
 width = float(input("Enter a width: "))  
@@ -25,7 +24,7 @@ the_area_of_rectangle = length * width
 print("The perimeter is %.2f." % the_perimeter_of_rectangle)  
 print("The area is %.2f." % the_area_of_rectangle)
 ```
-#### 2.4
+### 2.4
 ```
 first_integer_number = int(input("Enter a integer: "))  
 second_integer_number = int(input("Enter a integer: "))  
@@ -37,7 +36,7 @@ print(f"The sum is {the_sum}.")
 print(f"The product is {the_product}.")  
 print("The average is %.2f." % the_average)
 ```
-#### 2.5
+### 2.5
 ```  
 talents = float(input("Enter talents: "))  
 pounds = float(input("Enter pounds: "))  
@@ -48,7 +47,7 @@ remainder = grams%1000
 print("The weight in modern unit:")  
 print("%.0f kilograms and %.2f grams." %(kilograms,remainder))  
 ```  
-#### 2.6
+### 2.6
 ```
 import random
 num1 = random.randint(0,9)  
@@ -71,8 +70,8 @@ num13 = random.randint(1,6)
 num14 = random.randint(1,6)  
 print(num11,num12,num13,num14,num11)
 ```
-### 3. Conditional structures (if)
-#### 3.1
+## 3. Conditional structures (if)
+### 3.1
 ```
 length = float(input("Enter the length of a zander in centimeters:"))  
 if length < 42:  
@@ -80,7 +79,7 @@ if length < 42:
 else:  
     print("the zander does fulfill the size limit")
 ```
-#### 3.2
+### 3.2
 ```
 cabin_class = input("Enter the cabin calss of a curise ship(LUX,A,B,C):")  
 if cabin_class == "LUX":  
@@ -94,7 +93,7 @@ elif cabin_class == "C":
 else:  
     print("Invalid cabin class.")
 ```
-#### 3.3
+### 3.3
 ```
 biological_gender = input("Enter your biological_gender(female/male):")  
 hemoglobin_value = float(input("Enter your hemoglobin value (g/l):"))  
@@ -113,7 +112,7 @@ elif biological_gender == "male":
     else:  
         print("Your hemoglobin value is normal!")
 ```
-#### 3.4
+### 3.4
 ```
 year = int(input("Enter a year:"))  
 if (year % 4) == 0:  
