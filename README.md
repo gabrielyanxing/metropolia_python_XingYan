@@ -1,22 +1,25 @@
+![Metropolia](https://cookie-cdn.cookiepro.com/logos/4167d0b9-598c-4c19-adcb-dbf31e3c74f0/18d85870-9dc6-4362-a7b0-3772a78cc17f/a4fd611e-5ca6-427b-a86d-f6bd35128c2d/metropolia_logo.png)
 # Metropolia-Python-Exercises
 ## 1. First program and deployment of version control
 ### 1.1
-	print("Hello, Viivi Virta!")
+```python
+print("Hello, Viivi Virta!")
+```
 ## 2. Variables and interactive programs
 ### 2.1
-```
+```python
 name = input("What is your name?\n")  
 print(f"Hello, {name}.")
 ```
 ### 2.2
-```
+```python
 import math
 radius = float(input("Enter a radius: "))  
 the_area_of_circle = math.pi * radius**2  
 print(f"The area is %.2f." % the_area_of_circle)
 ```
 ### 2.3
-```
+```python
 length = float(input("Enter a length: "))  
 width = float(input("Enter a width: "))  
 the_perimeter_of_rectangle = (length + width) * 2  
@@ -25,7 +28,7 @@ print("The perimeter is %.2f." % the_perimeter_of_rectangle)
 print("The area is %.2f." % the_area_of_rectangle)
 ```
 ### 2.4
-```
+```python
 first_integer_number = int(input("Enter a integer: "))  
 second_integer_number = int(input("Enter a integer: "))  
 third_integer_number = int(input("Enter a integer: "))  
@@ -37,7 +40,7 @@ print(f"The product is {the_product}.")
 print("The average is %.2f." % the_average)
 ```
 ### 2.5
-```  
+```python
 talents = float(input("Enter talents: "))  
 pounds = float(input("Enter pounds: "))  
 lots = float(input("Enter lots: "))  
@@ -48,7 +51,7 @@ print("The weight in modern unit:")
 print("%.0f kilograms and %.2f grams." %(kilograms,remainder))  
 ```  
 ### 2.6
-```
+```python
 import random
 num1 = random.randint(0,9)  
 num2 = random.randint(0,9)  
@@ -72,7 +75,7 @@ print(num11,num12,num13,num14,num11)
 ```
 ## 3. Conditional structures (if)
 ### 3.1
-```
+```python
 length = float(input("Enter the length of a zander in centimeters:"))  
 if length < 42:  
     print("%.1f centimeters below the size limit the caught fish was.And release the fish back into the lake." % (42-length))  
@@ -80,7 +83,7 @@ else:
     print("the zander does fulfill the size limit")
 ```
 ### 3.2
-```
+```python
 cabin_class = input("Enter the cabin calss of a curise ship(LUX,A,B,C):")  
 if cabin_class == "LUX":  
     print("LUX:upper-deck cabin with a balcony.")  
@@ -94,7 +97,7 @@ else:
     print("Invalid cabin class.")
 ```
 ### 3.3
-```
+```python
 biological_gender = input("Enter your biological_gender(female/male):")  
 hemoglobin_value = float(input("Enter your hemoglobin value (g/l):"))  
 if biological_gender == "female":  
@@ -113,7 +116,7 @@ elif biological_gender == "male":
         print("Your hemoglobin value is normal!")
 ```
 ### 3.4
-```
+```python
 year = int(input("Enter a year:"))  
 if (year % 4) == 0:  
     if (year % 100) != 0:  
