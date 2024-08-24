@@ -1,1 +1,2 @@
-Metropolia Python Exercises:
+Metropolia Python Exercises
+
