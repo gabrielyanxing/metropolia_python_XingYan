@@ -49,7 +49,8 @@ print("The weight in modern unit:")
 print("%.0f kilograms and %.2f grams." %(kilograms,remainder))  
 ```  
 #### 2.6
-```  
+```
+import random
 num1 = random.randint(0,9)  
 num2 = random.randint(0,9)  
 num3 = random.randint(0,9)  
