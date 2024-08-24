@@ -12,7 +12,7 @@ print(f"Hello, {name}.")
 # 2.2
 radius = float(input("Enter a radius: "))
 the_area_of_circle = math.pi * radius**2
-print(f"The area is %.2f." % the_area_of_circle)
+print("The area is %.2f." % the_area_of_circle)
 
 # 2.3
 length = float(input("Enter a length: "))
@@ -70,7 +70,7 @@ length = float(input("Enter the length of a zander in centimeters:"))
 if length < 42:
     print("%.1f centimeters below the size limit the caught fish was.And release the fish back into the lake." % (42-length))
 else:
-    print("the zander does fulfill the size limit")
+    print("the zander does fulfill the size limit.")
 
 # 3.2
 cabin_class = input("Enter the cabin class of a cruise ship(LUX,A,B,C):")
