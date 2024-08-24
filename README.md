@@ -1,17 +1,20 @@
 ![Metropolia](https://cookie-cdn.cookiepro.com/logos/4167d0b9-598c-4c19-adcb-dbf31e3c74f0/18d85870-9dc6-4362-a7b0-3772a78cc17f/a4fd611e-5ca6-427b-a86d-f6bd35128c2d/metropolia_logo.png)
 # Metropolia-Python-Exercises 
-### Group B: **XING YAN**
+#### Group B: XING YAN
+***
 ## 1. First program and deployment of version control
 ### 1.1
 ```python
 print("Hello, Viivi Virta!")
 ```
+***
 ## 2. Variables and interactive programs
 ### 2.1
 ```python
 name = input("What is your name?\n")  
 print(f"Hello, {name}.")
 ```
+
 ### 2.2
 ```python
 import math
@@ -19,6 +22,7 @@ radius = float(input("Enter a radius: "))
 the_area_of_circle = math.pi * radius**2  
 print(f"The area is %.2f." % the_area_of_circle)
 ```
+
 ### 2.3
 ```python
 length = float(input("Enter a length: "))  
@@ -74,6 +78,7 @@ num13 = random.randint(1,6)
 num14 = random.randint(1,6)  
 print(num11,num12,num13,num14,num11)
 ```
+***
 ## 3. Conditional structures (if)
 ### 3.1
 ```python
