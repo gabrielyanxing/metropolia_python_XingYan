@@ -141,10 +141,10 @@ while True:
         break
 
     number = float(number)
-    if max_num is None or max_num > number:
+    if max_num is None or number > max_num:
         max_num = number
 
-    if min_num is None or min_num < number:
+    if min_num is None or number < min_num:
         min_num = number
 
 if (max_num and min_num) is not None:
