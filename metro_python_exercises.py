@@ -182,3 +182,20 @@ while True:
             break
 
 # 4.6
+count_xy = 0
+count_circle_points = 0
+user_points = int(input("Enter number of points: "))
+while True:
+    num_x = random.uniform(-1, 1)
+    num_y = random.uniform(-1, 1)
+    count_xy += 1
+
+    if num_x ** 2 + num_y ** 2 <= 1:
+        count_circle_points += 1
+
+    approximation = (4 * count_circle_points) / count_xy
+
+    if count_xy == user_points:
+        break
+
+print(f"The approximation is {approximation}.")
