@@ -136,3 +136,73 @@ if (year % 4) == 0:
 else:  
     print("It's not a leap year.")
 ```
+## 4. While loops(while)
+### 4.1
+```python
+i = 0
+while i <= 1000:
+    print(i)
+    i += 3
+```
+### 4.2
+```python
+inches = float(input("Enter inches: "))
+while inches >= 0:
+    centimeters  = inches * 2.54
+    print(f"{inches} inches is {centimeters} centimeters")
+    inches = float(input("Enter inches: "))
+print("Please enter a positive number!")
+```
+### 4.3
+```python
+max_num = None
+min_num = None
+while True:
+    number = input("Enter a number: ")
+    if number == "":
+        print("Bye!")
+        break
+
+    number = float(number)
+    if max_num is None or max_num > number:
+        max_num = number
+
+    if min_num is None or min_num < number:
+        min_num = number
+
+if (max_num and min_num) is not None:
+    print(f"The max number is {max_num},the min number is {min_num}.")
+```
+### 4.4
+```python
+import random
+random_num = random.randint(1,10)
+while True:
+    guess_num = int(input("Enter the number you guessed:"))
+    if guess_num == random_num:
+        print("Correct!")
+        break
+    else:
+        if guess_num > random_num:
+            print("Too,high!")
+        else:
+            print("Too,low!")
+```
+### 4.5
+```python
+username = "root"
+password = "123456"
+count = 0
+while True:
+    username_input = input("Enter your username: ")
+    password_input = input("Enter your password: ")
+    count += 1
+    if username_input == username and password_input == password:
+        print("Welcome")
+        break
+    elif username_input != username or password_input != password:
+        print("invalid input, enter again")
+        if count == 4:
+            print("Access denied")
+            break
+```
