@@ -181,7 +181,7 @@ while True:
             print("Access denied")
             break
 
-# 4.61
+# 4.6
 count_xy = 0
 count_circle_points = 0
 user_points = int(input("Enter number of points: "))
