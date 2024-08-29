@@ -165,8 +165,8 @@ while True:
             print("Too,low!")
 
 # 4.5
-username = "root"
-password = "123456"
+username = "python"
+password = "password"
 count = 0
 while True:
     username_input = input("Enter your username: ")
@@ -177,7 +177,7 @@ while True:
         break
     elif username_input != username or password_input != password:
         print("invalid input, enter again")
-        if count == 4:
+        if count == 5:
             print("Access denied")
             break
 
