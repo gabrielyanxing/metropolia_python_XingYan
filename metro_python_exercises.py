@@ -199,3 +199,48 @@ while True:
         break
 
 print(f"The approximation is {approximation}.")
+
+# 5.List structures and iterative loops (for)
+# 5.1
+the_number_of_dice_roll = input("Enter your numbers of dices:")
+total_number = 0
+
+for i in range(int(the_number_of_dice_roll)):
+    random_number = random.randint(1, 6)
+    print(random_number)
+    total_number += random_number
+
+print(total_number)
+
+# 5.2
+numbers_list = []
+while True:
+    number = input("Enter a number:")
+    if number == "":
+        break
+    number = float(number)
+    numbers_list.append(number)
+
+numbers_list.sort(reverse=True)
+print(numbers_list[:5])
+
+# 5.3
+number_user_input = int(input("Enter a number:"))
+
+if number_user_input > 1:
+    for i in range(2, number_user_input):
+        if number_user_input % i == 0:
+            print("The number is not a prime number.")
+            break
+    else:
+        print("The number is a prime number.")
+else:
+    print("The number is not a prime number.")
+
+# 5.4
+city_name_list = []
+for i in range(5):
+    city_name = input("Enter a city name:")
+    city_name_list.append(city_name)
+for i in city_name_list:
+    print(i)
