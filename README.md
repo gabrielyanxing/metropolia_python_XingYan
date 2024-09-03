@@ -220,7 +220,7 @@ while True:
     if num_x ** 2 + num_y ** 2 <= 1:
         count_circle_points += 1
 
-    approximation = (4 * count_circle_points) / count_xy
+    approximation = (4 * count_circle_points) / user_points
 
     if count_xy == user_points:
         break
