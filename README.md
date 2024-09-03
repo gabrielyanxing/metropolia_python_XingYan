@@ -217,7 +217,7 @@ while True:
     num_y = random.uniform(-1, 1)
     count_xy += 1
 
-    if num_x ** 2 + num_y ** 2 <= 1:
+    if num_x ** 2 + num_y ** 2 < 1:
         count_circle_points += 1
 
     approximation = (4 * count_circle_points) / user_points
