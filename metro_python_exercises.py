@@ -167,17 +167,17 @@ while True:
 # 4.5
 username = "python"
 password = "password"
-count = 0
+counter = 0
 while True:
     username_input = input("Enter your username: ")
     password_input = input("Enter your password: ")
-    count += 1
+    counter += 1
     if username_input == username and password_input == password:
         print("Welcome")
         break
     elif username_input != username or password_input != password:
         print("invalid input, enter again")
-        if count == 5:
+        if counter == 5:
             print("Access denied")
             break
 
