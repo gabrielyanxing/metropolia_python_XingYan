@@ -244,3 +244,82 @@ for i in range(5):
     city_name_list.append(city_name)
 for i in city_name_list:
     print(i)
+
+# 6. Functions
+# 6.1
+def dice():
+    random_dice = random.randint(1, 6)
+    return random_dice
+
+while True:
+    dice_number = dice()
+    print(f"The dice is {dice_number}.")
+    if  dice_number == 6:
+        break
+
+# 6.2
+def dice_sides(sides):
+    random_dice_side = random.randint(1, sides)
+    return random_dice_side
+
+sides = int(input("Enter number of sides:"))
+
+while True:
+    random_dice_side = dice_sides(sides)
+    print(f"The dice is {random_dice_side}.")
+    if random_dice_side == sides:
+        break
+
+# 6.3
+def us_gal_l(us_gal):
+    litre = 0.264172052358 * us_gal
+    return litre
+
+while True:
+    us_gal = float(input("Enter your US gal value:"))
+    output_litre = us_gal_l(us_gal)
+    if us_gal < 0:
+        print("Exit")
+        break
+    print(f"{us_gal} = {output_litre:.2f}")
+
+# 6.4
+def int_list(user_list):
+    sum_list = 0
+    for i in user_list:
+        sum_list += i
+    return sum_list
+
+mylist = [1,2,3,4,5,6,7]
+
+print(f"The sum of the number in the list is {int_list(mylist)}.")
+
+# 6.5
+def int_list_b(user_list_b):
+    for i in user_list_b:
+        if i % 2 != 0:
+            user_list_b.remove(i)
+    return user_list_b
+
+mylist_b = [1,2,3,4,5,6,7,8,9,10,11]
+print(f"The original list is {mylist_b}.")
+print(f"The cut-down list is {int_list_b(mylist_b)}.")
+
+# 6.6
+def pizza(diameter,price):
+    radius_in_meters = (diameter / 2) / 100
+    the_area_of_pizza = math.pi * radius_in_meters ** 2
+    price_per_square_meter = price / the_area_of_pizza
+    return price_per_square_meter
+
+pizza_a_diameter = float(input("Enter the first pizza diameter:"))
+pizza_a_price = float(input("Enter the first pizza price:"))
+pizza_b_diameter = float(input("Enter the second pizza diameter:"))
+pizza_b_price = float(input("Enter the second pizza price:"))
+
+if pizza(pizza_a_diameter,pizza_a_price) < pizza(pizza_b_diameter,pizza_b_price):
+    print("The first pizza is a better deal.")
+elif pizza(pizza_a_diameter,pizza_a_price) > pizza(pizza_b_diameter,pizza_b_price):
+    print("The second pizza is a better deal.")
+else:
+    print("Both pizzas offer the same value.")
