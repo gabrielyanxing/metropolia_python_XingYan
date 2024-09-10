@@ -365,3 +365,62 @@ elif pizza(pizza_a_diameter,pizza_a_price) > pizza(pizza_b_diameter,pizza_b_pric
 else:
     print("Both pizzas offer the same value.")
 ```
+## 7. Tuple, set, and dictionary
+### 7.1
+```python
+season_tuple = ("spring", "spring", "spring",
+                "summer", "summer", "summer",
+                "autumn", "autumn", "autumn",
+                "winter", "winter", "winter")
+month_num = int(input("Enter a number of a month(1-12):"))
+season = season_tuple[month_num-3]
+print(season)
+```
+### 7.2
+```python
+name_set = set()
+while True:
+    name = input("Enter a name:")
+
+    if name == "":
+        break
+
+    elif name in name_set:
+        print("Existing name!")
+
+    else:
+        print("New name!")
+    name_set.add(name)
+
+for name in name_set:
+    print(name)
+```
+### 7.3
+```python
+airport = {"EFHK":"Helsinki-Vantaa Airport"}
+while True:
+    start_ask = input("Choose an option:Enter a new airport[E] "
+                      "Fetch the information of an existing airport[F] "
+                      "Quit[Q]:").upper()
+
+    if start_ask == "E":
+        icao = input("Enter the airport's ICAO code:").upper()
+        if icao in airport:
+            print("This ICAO code already exists in the database.")
+        else:
+            airport_name = input("Enter the airport name:")
+            airport[icao] = airport_name
+            print(f"{airport_name} and {icao} code have been added to the database.")
+
+    elif start_ask == "F":
+        icao = input("Enter the ICAO code of the airport you want to fetch: ").upper()
+        airport_name = airport.get(icao)
+        if airport_name:
+            print(f"The airport name for ICAO code '{icao}' is '{airport_name}'.")
+        else:
+            print("I can't found the airport name with that ICAO code in the database.")
+
+    elif start_ask == 'Q':
+        print("Exiting the program.")
+        break
+```
