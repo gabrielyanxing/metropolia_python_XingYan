@@ -380,3 +380,117 @@ while True:
     elif start_ask == 'Q':
         print("Exiting the program.")
         break
+
+# 8. Using relational databases
+# 8.1
+import mysql.connector
+def connect_to_mariadb_city():
+    conn = mysql.connector.connect(
+        host = 'localhost',
+        port = 3306,
+        database = 'Airport',
+        user = 'root',
+        password = '123456',
+        autocommit = True
+    )
+    return conn
+def get_airport_location_city(icao, conn):
+    cursor = conn.cursor()
+    query = "SELECT name, municipality FROM airport WHERE ident = %s"
+    cursor.execute(query, (icao,))
+    result = cursor.fetchone()
+    cursor.close()
+    return result if result else None
+
+icao_input = input("Enter your ICAO:").upper()
+conn = connect_to_mariadb_city()
+airport_city = get_airport_location_city(icao_input, conn)
+
+if airport_city:
+    print(f"The name of airport is {airport_city[0]}, in {airport_city[1]}.")
+else:
+    print("Invalid isao code.")
+
+conn.close()
+
+# 8.2
+def connect_to_mariadb():
+    conn = mysql.connector.connect(
+        host='localhost',
+        port=3306,
+        database='Airport',
+        user='root',
+        password='123456',
+        autocommit=True
+    )
+    return conn
+
+def get_airports_by_country(iso_country, conn):
+    cursor = conn.cursor()
+    query = "SELECT type, COUNT(*) FROM airport WHERE iso_country = %s GROUP BY type ORDER BY type"
+    cursor.execute(query, (iso_country,))
+    result = cursor.fetchall()
+    cursor.close()
+    return result
+
+iso_country_input = input("Enter the country code (for example 'FI' for Finland): ").upper()
+
+conn = connect_to_mariadb()
+airports = get_airports_by_country(iso_country_input, conn)
+
+if airports:
+    print(f"Airports in {iso_country_input} by type:")
+    for airport_type, count in airports:
+        print(f"{airport_type}: {count}")
+else:
+    print(f"No airports found for the country code: {iso_country_input}")
+
+conn.close()
+
+# 8.3
+from geopy.distance import geodesic
+
+def connect_to_mariadb():
+    conn = mysql.connector.connect(
+        host='localhost',
+        port=3306,
+        database='Airport',
+        user='root',
+        password='123456',
+        autocommit=True
+    )
+    return conn
+
+
+def get_airport_location(icao, conn):
+    cursor = conn.cursor()
+    query = "SELECT latitude_deg, longitude_deg FROM airport WHERE ident = %s"
+    cursor.execute(query, (icao,))
+    result = cursor.fetchone()
+    cursor.close()
+    return result
+
+
+def calculate_distance(icao1, icao2, conn):
+    loc1 = get_airport_location(icao1, conn)
+    loc2 = get_airport_location(icao2, conn)
+    print(loc1)
+    if loc1 and loc2:
+        distance = geodesic(loc1, loc2).kilometers
+        return distance
+    else:
+        return None
+
+
+def main():
+    icao1 = input("Enter the first ICAO code: ")
+    icao2 = input("Enter the second ICAO code: ")
+
+    conn = connect_to_mariadb()
+    distance = calculate_distance(icao1, icao2, conn)
+    if distance is not None:
+        print(f"The distance between {icao1} and {icao2} is {distance:.2f} kilometers.")
+    else:
+        print("Could not find one or both airports.")
+
+    conn.close()
