@@ -542,4 +542,7 @@ def main():
         print("Could not find one or both airports.")
 
     conn.close()
+    
+if __name__ == '__main__':
+    main()
 ```
