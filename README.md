@@ -546,3 +546,57 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+## 9. Fundamentals of object-oriented programming
+### 9.1 9.2 9.3 9.4
+```python
+import random
+class Car:
+
+    def __init__(self, registration_number, maximum_speed, current_speed, travelled_distance):
+        self.registration_number = registration_number
+        self.maximum_speed = maximum_speed
+        self.current_speed = current_speed
+        self.travelled_distance = travelled_distance
+
+    def accelerate(self, change_of_speed):
+        self.current_speed += change_of_speed
+        if self.current_speed > self.maximum_speed:
+            self.current_speed = self.maximum_speed
+        elif self.current_speed < 0:
+            self.current_speed = 0
+
+    def drive(self, hours):
+        self.travelled_distance += hours * self.current_speed
+
+    def __str__(self):
+        return (f"{self.registration_number}\t\t\t\t{self.maximum_speed} km/h\t"
+                f"{self.current_speed} km/h\t\t{self.travelled_distance} km\t\t")
+
+car1 = Car("ABC-123", 142, 0, 0)
+car1.accelerate(30)
+car1.accelerate(70)
+car1.accelerate(50)
+print(f"The current speed is {car1.current_speed} km/h.")
+
+car1.accelerate(-200)
+print(f"The current speed is {car1.current_speed} km/h.")
+
+car2 = Car("ABC-123", 142, 60, 2000)
+car2.drive(1.5)
+print(f"The travelled distance is {car2.travelled_distance} km.")
+
+car_list = [Car(f"ABC-{i+1}", random.randint(100, 200), 0, 0) for i in range(10)]
+
+race_finished = False
+while not race_finished:
+    for x in car_list:
+        x.accelerate(random.randint(-10, 15))
+        x.drive(1)
+        if x.travelled_distance >= 10000:
+            race_finished = True
+
+
+print("Registration Number\tMax Speed\tCurrent Speed\tTravelled Distance")
+for car3 in car_list:
+    print(car3)
+```
