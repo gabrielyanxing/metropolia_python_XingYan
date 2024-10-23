@@ -521,7 +521,7 @@ class Car:
 
     def __str__(self):
         return (f"{self.registration_number}\t\t\t\t{self.maximum_speed} km/h\t"
-                f"{self.current_speed} km/h\t\t{self.travelled_distance} km\t\t")
+                f"{self.current_speed} km/h\t\t\t{self.travelled_distance} km\t\t")
 
 car1 = Car("ABC-123", 142, 0, 0)
 car1.accelerate(30)
@@ -548,5 +548,6 @@ while not race_finished:
 
 
 print("Registration Number\tMax Speed\tCurrent Speed\tTravelled Distance")
+print("--------------------------------------------------------------")
 for car3 in car_list:
     print(car3)

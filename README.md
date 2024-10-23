@@ -597,6 +597,7 @@ while not race_finished:
 
 
 print("Registration Number\tMax Speed\tCurrent Speed\tTravelled Distance")
+print("--------------------------------------------------------------")
 for car3 in car_list:
     print(car3)
 ```
