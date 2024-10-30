@@ -786,6 +786,7 @@ print(joke)
 ```
 ### 12.2
 ```python
+import requests
 def city():
 
     city_name = input("Enter a city name:")
