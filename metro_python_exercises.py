@@ -711,3 +711,45 @@ print("Vehicle Information:")
 print("Registration\t\tMax Speed\tCurrent Speed\tTravelled Distance")
 print(electric_car)
 print(gasoline_car)
+
+# 12. Using external interfaces
+# 12.1
+import requests
+def fetch_random_chuck_norris_joke():
+    url = "https://api.chucknorris.io/jokes/random"
+
+    response = requests.get(url)
+    joke_data = response.json()
+
+    joke_text = joke_data.get("value", "Not found")
+    return joke_text
+
+
+joke = fetch_random_chuck_norris_joke()
+print(joke)
+
+# 12.2
+def city():
+
+    city_name = input("Enter a city name:")
+    country_code = input("You can type in the country code to remove ambiguity, or you can hit enter to skip it.\n"
+                         "Enter the country code:")
+    api_key = "3462ee9cb0e2472d831723f1deabd315"
+
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={city_name},{country_code}&appid={api_key}"
+
+    response = requests.get(url)
+
+    if response .status_code == 200:
+        data = response.json()
+        weather = data['weather'][0]['main']
+        description = data['weather'][0]['description']
+        temperature_kelvin = data['main']['temp']
+        temperature_celsius = temperature_kelvin - 273.15
+        print(f"{'City Name':<15} {'Weather Condition':<20} {'Weather Description':<20} {'Celsius Degrees':<15}")
+        print(f"{city_name:<15} {weather:<20} {description:<20} {temperature_celsius:15.1f}")
+
+    else:
+        print("Error:", response.status_code)
+
+city()
