@@ -812,3 +812,82 @@ def city():
 
 city()
 ```
+## 13. Setting up a backend service with an interface
+### 13.1
+```python
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+def is_prime(number):
+    if number <= 1:
+        return False
+    for i in range(2, int(number ** 0.5) + 1):
+        if number % i == 0:
+            return False
+    return True
+
+@app.route('/')
+def home():
+    return "Welcome to the Prime Number Checker!"
+
+@app.route('/prime_number/<int:number>', methods=['GET'])
+def prime_number(number):
+    result = {
+        "Number": number,
+        "isPrime": is_prime(number)
+    }
+    return jsonify(result)
+
+app.run()
+```
+### 13.2
+```python
+from flask import Flask
+import mysql.connector
+def connect_to_db():
+    conn = mysql.connector.connect(
+        host='localhost',
+        port=3306,
+        database='Airport',
+        user='root',
+        password='123456',
+        autocommit=True
+    )
+    return conn
+
+
+def get_airport(conn, icao_code):
+    cursor = conn.cursor()
+    query = "SELECT ident, name, municipality FROM airport Where ident = %s"
+    cursor.execute(query, (icao_code,))
+    result = cursor.fetchone()
+    cursor.close()
+    return result
+
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return "Welcome!"
+
+@app.route('/airport/<icao_code>')
+def show_airport_icao(icao_code):
+    conn = connect_to_db()
+    airport_data = get_airport(conn, icao_code.upper())
+
+    if not airport_data:
+        return {"error": "Airport not found"}
+
+    response = {
+        "ICAO": airport_data[0],
+        "Name": airport_data[1],
+        "Location": airport_data[2]
+    }
+    return response
+
+
+if __name__ == '__main__':
+    app.run(use_reloader=True, host='127.0.0.1', port=5000)
+```
